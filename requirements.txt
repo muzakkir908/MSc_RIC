@@ -1,0 +1,11 @@
+pandas==2.2.0
+numpy==1.26.0
+matplotlib==3.8.0
+seaborn==0.13.0
+keyboard==0.13.5
+mouse==0.7.1
+scikit-learn==1.4.0
+pynput==1.7.6
+psutil==5.9.8
+GPUtil==1.4.0
+speedtest-cli==2.1.3

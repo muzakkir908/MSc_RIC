@@ -1,0 +1,47 @@
+
+Q-LEARNING IMPLEMENTATION REPORT
+================================
+
+1. OBJECTIVE
+   Train a Q-learning agent to optimize network slice allocation in cloud gaming,
+   balancing performance (low latency) with cost efficiency.
+
+2. STATE SPACE (5 features)
+   - Combat probability (0-1): From LSTM predictions
+   - Current latency (normalized): Network performance metric
+   - Network quality (0-1): Inverse of congestion
+   - CPU load (0-1): System utilization
+   - Time since combat (normalized): Temporal context
+
+3. ACTION SPACE (3 actions)
+   - Action 0: Basic slice (80ms base latency, $0.1/step)
+   - Action 1: Medium slice (50ms base latency, $0.3/step)
+   - Action 2: Premium slice (30ms base latency, $0.6/step)
+
+4. REWARD FUNCTION
+   - Excellent latency (≤50ms): +1.0
+   - Good latency (≤80ms): +0.5
+   - Acceptable latency (≤100ms): 0.0
+   - Poor latency (>100ms): -1.0
+   - Combat bonuses: +0.5 for premium during combat
+   - Efficiency bonuses: +0.1 for basic during peaceful periods
+   - Waste penalties: -0.3 for unnecessary premium usage
+
+5. TRAINING PARAMETERS
+   - Learning rate (α): 0.1
+   - Discount factor (γ): 0.95
+   - Exploration (ε): 1.0 → 0.01 (decay: 0.995)
+   - Episodes: 1000
+   - Episode length: 3000 steps (5 minutes)
+
+6. KEY RESULTS
+   The Q-learning agent learns to:
+   - Use premium slices proactively before combat
+   - Switch to basic slices during peaceful periods
+   - Balance cost and performance effectively
+   - Outperform simple threshold-based policies
+
+7. INTEGRATION WITH LSTM
+   The combat probability from your LSTM model (98.5% accuracy) serves as
+   the primary input to the Q-learning state, enabling proactive resource
+   allocation 2-3 seconds before combat events.

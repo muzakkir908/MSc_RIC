@@ -1,0 +1,6 @@
+{
+  "total_states_explored": 46,
+  "final_epsilon": 0.01,
+  "episodes_trained": 1000,
+  "average_final_reward": 2621.2099999999855
+}

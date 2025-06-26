@@ -1,0 +1,48 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore virtual environment
+venv/
+ENV/
+env/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore model files and checkpoints
+*.pkl
+*.h5
+*.pt
+*.ckpt
+
+# Ignore log and output files
+*.log
+*.out
+
+# Ignore data files
+*.csv
+*.tsv
+*.db
+*.sqlite
+*.parquet
+
+# Ignore user-specific config
+*.env
+.env
+*.local
+
+# Ignore Streamlit cache
+.streamlit/
+.cache/
+__pypackages__/
+
+# Ignore system files
+Thumbs.db

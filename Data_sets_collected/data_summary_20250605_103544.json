@@ -1,0 +1,16 @@
+{
+  "total_datapoints": 30242,
+  "session_duration_minutes": 50.403333333333336,
+  "combat_ratio": 0.36601415250314134,
+  "avg_ping": 76.68120164010317,
+  "high_risk_ratio": 0.2799285761523709,
+  "action_distribution": {
+    "0": 13971,
+    "2": 8333,
+    "1": 7938
+  },
+  "data_quality_flags": {
+    "missing_values": "Series([], dtype: int64)"
+  },
+  "gpu_note": "Intel GPU - monitoring not available, using CPU/Memory for system load"
+}

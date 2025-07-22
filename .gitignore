@@ -1,48 +1,47 @@
-# Ignore Python cache files
+﻿# Python
 __pycache__/
 *.py[cod]
-*$py.class
-
-# Ignore virtual environment
+*.class
+*.so
+.Python
 venv/
-ENV/
 env/
+*.egg-info/
 
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+# Data files
+*.csv
+!01_data/*/.gitkeep
+01_data/01_raw/*
+!01_data/01_raw/sample.csv
 
-# Ignore VS Code settings
-.vscode/
-
-# Ignore macOS system files
-.DS_Store
-
-# Ignore model files and checkpoints
+# Models
+*.pth
 *.pkl
 *.h5
-*.pt
-*.ckpt
+!03_models/*/.gitkeep
 
-# Ignore log and output files
-*.log
-*.out
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Ignore data files
-*.csv
-*.tsv
-*.db
-*.sqlite
-*.parquet
-
-# Ignore user-specific config
-*.env
-.env
-*.local
-
-# Ignore Streamlit cache
-.streamlit/
-.cache/
-__pypackages__/
-
-# Ignore system files
+# OS
+.DS_Store
 Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# AWS
+*.pem
+aws_ips.txt
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Results
+06_results/03_logs/*
+!06_results/03_logs/.gitkeep

@@ -1,0 +1,5 @@
+﻿flask==3.0.0
+torch==2.7.1
+numpy==1.26.0
+scikit-learn==1.4.0
+requests==2.31.0

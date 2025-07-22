@@ -1,0 +1,29 @@
+﻿# PROJECT REORGANIZATION SUMMARY
+Date: 07/16/2025 23:38:53
+
+## New Structure Overview
+- 01_data/         - All datasets organized by type
+- 02_src/          - Source code organized by function
+- 03_models/       - All trained models
+- 04_deployment/   - Deployment scripts and servers
+- 05_tests/        - All test files categorized
+- 06_results/      - Results and visualizations
+- 07_docs/         - Documentation
+- 08_scripts/      - Utility scripts
+- 99_archive/      - Old/unused files
+
+## Key Files Locations
+- Main data collector: 02_src/01_data_collection/enhanced_data_collector_v1.py
+- LSTM training: 02_src/03_model_training/lstm/train_lstm.py
+- Edge server: 04_deployment/01_servers/edge/edge_server.py
+- AWS test: 05_tests/integration_tests/test_aws_complete.py
+
+## Quick Commands
+- Start all servers: .\08_scripts\powershell\start_all_servers.ps1
+- Run all tests: python 08_scripts\python\run_all_tests.py
+
+## Next Steps
+1. Update any hardcoded paths in Python files
+2. Test that all imports still work
+3. Commit to Git
+4. Push to GitHub

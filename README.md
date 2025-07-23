@@ -27,4 +27,4 @@ This project implements a player-aware resource management system for cloud gami
 ## Key Results
 - **Prediction Accuracy**: 98.5%
 - **Latency Reduction**: 35% during combat
-- **Cost Savings**: 90% vs always-premium allocation
+- **Cost Savings**: 90% vs always-premium allocatio

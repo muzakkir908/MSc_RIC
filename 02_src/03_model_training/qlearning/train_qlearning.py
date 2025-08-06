@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from gaming_environment import CloudGamingEnvironment
 from qlearning_agent import QLearningAgent, QLearningTrainer
 import time
+from gaming_environment import CloudGamingEnvironment
 
 def train_q_learning_agent(episodes=1000):
     """Main function to train the Q-learning agent"""

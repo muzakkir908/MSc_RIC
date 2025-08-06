@@ -54,13 +54,16 @@ def load_q_agent():
     
     # Try to find the model file
     possible_paths = [
-        '/home/ec2-user/models/trained_q_learning_model.pkl',
-        '/home/ec2-user/models/q_learning_model.pkl',
-        '/home/ec2-user/trained_q_learning_model.pkl'
+    str(Path(__file__).resolve().parents[3] / '03_models' / 'qlearning' / 'trained_q_learning_model.pkl')
     ]
+
+    
+
+
     
     model_loaded = False
     for path in possible_paths:
+        print("Looking for model at:", path)
         if os.path.exists(path):
             try:
                 with open(path, 'rb') as f:

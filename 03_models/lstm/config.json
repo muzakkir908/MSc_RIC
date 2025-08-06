@@ -1,0 +1,23 @@
+{
+  "feature_columns": [
+    "mouse_speed",
+    "turning_rate",
+    "movement_keys",
+    "is_shooting",
+    "activity_score",
+    "keys_pressed",
+    "ping_ms",
+    "cpu_percent",
+    "mouse_speed_ma",
+    "activity_ma",
+    "combat_likelihood"
+  ],
+  "sequence_length": 30,
+  "model_type": "LSTM",
+  "training_date": "2025-07-30T14:54:04.372131",
+  "performance": {
+    "test_accuracy": 0.9505372676104383,
+    "best_val_accuracy": 0.9553129797032236,
+    "best_val_f1": 0.9564494680851063
+  }
+}

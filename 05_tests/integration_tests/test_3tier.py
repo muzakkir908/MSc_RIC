@@ -238,9 +238,10 @@ class ThreeTierTest:
 
 
 if __name__ == "__main__":
-    EDGE_IP = "18.232.149.80"
-    FOG_IP = "3.80.82.223"
-    CLOUD_IP = "13.217.230.163"
+    EDGE_IP = "54.146.235.60"     # ✅ EdgeServer (t2.medium)
+    FOG_IP = "54.234.97.2"        # ✅ FogServer (t2.medium)
+    CLOUD_IP = "98.81.90.202"     # ✅ CloudServer (t2.medium)
+
 
     tester = ThreeTierTest(EDGE_IP, FOG_IP, CLOUD_IP)
 

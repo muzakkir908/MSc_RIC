@@ -60,7 +60,8 @@ def load_model():
     # Get the current directory
     current_dir = Path(__file__).parent
     base_dir = current_dir.parent  # Go up one level to deployment folder
-    models_dir = base_dir / 'models'
+    models_dir = Path(__file__).resolve().parents[3] / '03_models' / 'lstm'
+
     
     print(f"Looking for models in: {models_dir}")
     

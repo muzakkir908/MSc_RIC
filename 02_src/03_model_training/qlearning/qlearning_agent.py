@@ -3,6 +3,7 @@ import pickle
 import json
 from collections import defaultdict
 import matplotlib.pyplot as plt
+from gaming_environment import CloudGamingEnvironment
 
 class QLearningAgent:
     """

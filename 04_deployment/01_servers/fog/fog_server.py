@@ -14,7 +14,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Configuration
-CLOUD_URL = "http://13.217.230.163:5001"
+CLOUD_URL = "http://98.81.90.202:5001"
 
 # Caching
 prediction_cache = {}
@@ -37,7 +37,8 @@ def health_check():
 def process_prediction():
     """Fog processing: caching and aggregation"""
     try:
-        data = request.json
+        data = request.get_json(force=True)
+        print("📥 Received from Edge:\n", json.dumps(data, indent=2))  # ✅ Debug print
         
         # Extract edge prediction
         edge_prediction = data.get('edge_prediction', {})
@@ -75,8 +76,12 @@ def process_prediction():
             'fog_trend': trend
         }
         
+        print("⛅ Forwarding to Cloud:", json.dumps(cloud_request, indent=2))  # ✅ Cloud request debug
+
+        start_time = time.time()
         cloud_response = requests.post(f"{CLOUD_URL}/decide", json=cloud_request)
-        
+        duration = time.time() - start_time
+
         if cloud_response.status_code == 200:
             decision = cloud_response.json()
             
@@ -93,9 +98,11 @@ def process_prediction():
             
             return jsonify(decision)
         else:
+            print("❌ Cloud server error:", cloud_response.text)
             return jsonify({'error': 'Cloud server error'}), 500
             
     except Exception as e:
+        print("🚨 Error in /process:", str(e))
         return jsonify({'error': str(e)}), 500
 
 @app.route('/cache/clear', methods=['POST'])
